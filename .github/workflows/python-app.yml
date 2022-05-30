@@ -8,9 +8,6 @@ on:
     branches: 
       - master 
 
-permissions:
-  contents: write
-
 jobs:
   conduit-selenium-test:
     runs-on: ubuntu-latest
@@ -34,7 +31,6 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f test_conduit/requirements.txt ]; 
         then pip install -r test_conduit/requirements.txt; fi
-        python pip install pytest
     
     - name: Test with pytest
       run: |
